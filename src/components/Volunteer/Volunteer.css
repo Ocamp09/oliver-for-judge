@@ -1,0 +1,395 @@
+/* ============================================================
+   Volunteer Section & Form
+   ============================================================ */
+.volunteer-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding-block: 80px;
+}
+
+.volunteer-inner {
+  max-width: 680px;
+}
+
+/* ── Section header ───────────────────────────────────────── */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.volunteer-heading {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.volunteer-subhead {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 48px;
+  max-width: 520px;
+}
+
+/* ============================================================
+   Form card
+   ============================================================ */
+.volunteer-form {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Fieldsets ────────────────────────────────────────────── */
+.form-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 36px;
+}
+
+.form-fieldset:last-of-type {
+  margin-bottom: 0;
+}
+
+.form-legend {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-heading);
+  padding: 0;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.legend-sub {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ── Field groups ─────────────────────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Labels ───────────────────────────────────────────────── */
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-heading);
+  letter-spacing: 0.01em;
+}
+
+.required-mark {
+  color: var(--gold);
+  margin-left: 2px;
+}
+
+.optional-mark {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ── Inputs ───────────────────────────────────────────────── */
+.form-input,
+.form-textarea {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-heading);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 10px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  appearance: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+.form-input:hover,
+.form-textarea:hover {
+  border-color: #3d4256;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-bg);
+}
+
+.form-input.is-error {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ── Inline field errors ──────────────────────────────────── */
+.field-error {
+  font-size: 13px;
+  color: #f87171;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.field-error::before {
+  content: '⚠';
+  font-size: 12px;
+}
+
+/* ── Checkboxes ───────────────────────────────────────────── */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px 18px;
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s, background 0.2s;
+  user-select: none;
+  min-width: 140px;
+}
+
+.checkbox-label:hover {
+  border-color: var(--gold-border);
+  background: var(--gold-bg);
+}
+
+/* Hide native checkbox but keep it accessible */
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom checkbox box */
+.checkbox-custom {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  transition: border-color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checked state */
+.checkbox-input:checked + .checkbox-custom {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #0d0f14;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+/* Focus ring on the label when input is focused */
+.checkbox-input:focus-visible + .checkbox-custom {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.checkbox-input:checked ~ .checkbox-text {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.checkbox-label:has(.checkbox-input:checked) {
+  border-color: var(--gold-border);
+  background: var(--gold-bg);
+}
+
+.checkbox-text {
+  font-size: 15px;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+/* ── Form footer ──────────────────────────────────────────── */
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.required-note {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.submit-btn {
+  padding: 12px 36px;
+  font-size: 16px;
+  border: none;
+  flex-shrink: 0;
+}
+
+/* ── Success state ────────────────────────────────────────── */
+.volunteer-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 64px 40px;
+  gap: 16px;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gold-bg);
+  border: 2px solid var(--gold-border);
+  font-size: 28px;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.success-heading {
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.success-body {
+  font-size: 16px;
+  color: var(--text);
+  max-width: 400px;
+  line-height: 1.7;
+}
+
+/* Reuse .btn classes from Hero */
+.volunteer-success .btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1.5px solid var(--gold-border);
+  color: var(--gold-light);
+  background: transparent;
+  transition: background 0.2s, border-color 0.2s;
+  margin-top: 8px;
+}
+
+.volunteer-success .btn:hover {
+  background: var(--gold-bg);
+  border-color: var(--gold);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .volunteer-form {
+    padding: 28px 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+  }
+
+  .checkbox-label {
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .volunteer-section {
+    padding-block: 56px;
+  }
+
+  .volunteer-form {
+    padding: 24px 16px;
+  }
+
+  .volunteer-success {
+    padding: 48px 24px;
+  }
+}

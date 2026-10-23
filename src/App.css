@@ -1,0 +1,10 @@
+/* App-level layout — keeps main content growing to push footer down */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+main {
+  flex: 1;
+}
